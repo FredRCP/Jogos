@@ -1,0 +1,288 @@
+*{
+  font-size: 62.5%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  color: darkblue;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+h1 img{
+  width: 6rem;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.tabuleiro{
+  width: 60rem;
+  height: 60rem;
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+}
+
+table{
+  width: 56rem;
+  height: 56rem;
+  background-color: whitesmoke;
+  border-collapse: collapse;
+}
+
+td{
+  border: 0.4rem solid darkblue;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+}
+
+.contorno{
+  border-top-style: none;
+}
+
+.contorno p{
+  font-size: 0.8rem;
+  position:absolute;
+  bottom: 1rem;
+  right: 1rem;
+
+}
+
+.contorno-baixo{
+  border-bottom-style: none;
+}
+
+
+
+.circle{
+  z-index: 2;
+  width: 65%;
+  height: 70%;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  border: 3px solid rgb(161, 204, 224);
+  
+}
+
+.circle div{
+  position: relative;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  border: 3px solid rgb(161, 204, 224);
+}
+
+.base-azul{
+  background-color: blue;
+}
+
+.base-amarela{
+  background-color: yellow;
+}
+
+.base-verde{
+  background-color: green;
+}
+
+.base-vermelha{
+  background-color: red;
+}
+
+.seta-verde{
+  background-image: url('../img/setaverde.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.seta-vermelha{
+  background-image: url('../img/setavermelha.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.seta-azul{
+  background-image: url('../img/setaazul.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.seta-amarela{
+  background-image: url('../img/setaamarela.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.triangulo1 {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-bottom: 1.7rem solid red;
+  border-right: 1.7rem solid yellow;
+  border-left: 1.7rem solid red;
+  border-top: 1.7rem solid yellow;
+}
+
+.triangulo2 {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-bottom: 1.7rem solid blue;
+  border-right: 1.7rem solid blue;
+  border-left: 1.7rem solid yellow;
+  border-top: 1.7rem solid yellow;
+}
+
+.triangulo3 {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-bottom: 1.7rem solid green;
+  border-right: 1.7rem solid green;
+  border-left: 1.7rem solid red;
+  border-top: 1.7rem solid red;
+}
+
+.triangulo4 {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-bottom: 1.7rem solid green;
+  border-right: 1.7rem solid blue;
+  border-left: 1.7rem solid green;
+  border-top: 1.7rem solid blue;
+}
+
+td:hover{
+  background-color: bisque;
+}
+
+#jogador-azul{
+  position: absolute;
+  font-size: 1.8rem;
+  color: blue;
+  top: 0.8rem;
+  left: 2rem;
+}
+
+#jogador-verde{
+  position: absolute;
+  font-size: 1.8rem;
+  color: green;
+  top: 0.8rem;
+  left: 2rem;
+}
+
+#jogador-vermelho{
+  position: absolute;
+  font-size: 1.8rem;
+  color: red;
+  top: 0.8rem;
+  left: 2rem;
+}
+
+#jogador-amarelo{
+  position: absolute;
+  font-size: 1.8rem;
+  color: rgb(208, 208, 0);
+  top: 0.8rem;
+  left: 2rem;
+}
+
+.semdisplay{
+  display: none;
+}
+
+img{
+  width: 1.1rem;
+  
+}
+
+img:hover{
+  cursor: pointer;  
+}
+
+.dadodiv{
+  display: flex;
+  flex-direction: column;
+  right: 12rem;
+  bottom: 40%;
+  gap: 1.4rem;
+  position: fixed;
+  align-items: center;
+  justify-items: center;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.dado{
+  background-image: url('../img/dadao.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 6rem;
+  height: 6rem;
+  border-style: none;
+  cursor: pointer;
+}
+
+.dado1:enabled{
+  transform: rotate(1440deg);
+  transition: all 1800ms ease-out;
+}
+
+.play{
+  top: 20%;
+  right: 12rem;
+  position: fixed;
+  justify-items: center;
+  align-items: center;
+  font-size: 4rem;
+  padding: 0;
+  border: 0;
+  border-style: none;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0);
+  cursor:pointer;
+}
+
+.play img{
+  width: 7rem;
+}
+
+.play:hover{
+  transition: all 2000ms ease-in-out;
+  transform: scale(1.2);
+}
+
+
+
+
+
+
