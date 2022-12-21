@@ -20,9 +20,17 @@ html{
 }
 
 h1 img{
-  width: 6rem;
-  font-size: 2.5rem;
-  margin: 0;
+  width: 40rem;
+  height: 40rem;
+  position: fixed;
+  left: 30%;
+  top: 10%;
+  display: block;
+  z-index: 3;
+}
+
+.ludo{
+  display: none;
 }
 
 .tabuleiro{
@@ -270,15 +278,60 @@ img:hover{
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0);
   cursor:pointer;
+  border-radius: 50%;
 }
 
 .play img{
-  width: 7rem;
+  width: 5rem;
+  border-radius: 50%;
+  position: relative;
+  background-color: rgb(4, 106, 87);
 }
 
-.play:hover{
-  transition: all 2000ms ease-in-out;
-  transform: scale(1.2);
+
+.reload{
+  width: 5rem;
+  height: 5rem;
+  background-color: rgb(81, 45, 157);
+  top: 29%;
+  right: 12rem;
+  border-radius: 50%;
+  position: fixed;
+}
+
+.reload:hover{
+  transform: rotate(-360deg);
+  transition: all 2.5s ease;
+}
+
+
+.play img:hover{
+  transition: all 4500ms ease-in-out;
+  transform: rotate(1080deg);
+  animation: cores 6s linear 0s infinite ;
+}
+
+@keyframes cores {
+  0%{
+    
+    background-color: blue;
+  }
+  
+  20%{
+    background-color:green;}
+
+  4%{
+    background-color: red;}
+
+  60%{
+    background-color: yellow;}
+
+  80%{
+    background-color: blueviolet;
+  }
+
+  100%{
+    background-color: orangered;}
 }
 
 

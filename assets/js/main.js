@@ -1,7 +1,5 @@
 
 function iniciarjogo(){
-        window.location.reload(false);
-
         const jogadorazul= prompt('nome do jogador azul') || 'Sem jogador';
         const jogadorverde= prompt('nome do jogador verde') || 'Sem jogador';
         const jogadorvermelho= prompt('nome do jogador vermelho') || 'Sem jogador';
@@ -16,7 +14,12 @@ function iniciarjogo(){
         let iverde=0;
         let ivermelho=0;
         let iamarelo=0;
+        const centro= document.querySelector('#centro');
+        centro.classList.add('ludo'); 
+}
 
+function reload(){
+        window.location.reload(false);     
 }
 
 // rolagem dos dados
@@ -32,22 +35,22 @@ function rolardado(){
     setTimeout(()=>{
     switch(dado){
 
-        case 1: dadinho.style.backgroundImage="url('./assets/img/face1.jpg')"; andarpeao(1); 
+        case 1: dadinho.style.backgroundImage="url('./assets/img/face1.jpg')"; 
         break;
 
-        case 2: dadinho.style.backgroundImage="url('./assets/img/face2.jpg')"; andarpeao(2);
+        case 2: dadinho.style.backgroundImage="url('./assets/img/face2.jpg')";
         break;
 
-        case 3: dadinho.style.backgroundImage="url('./assets/img/face3.jpg')"; andarpeao(3);
+        case 3: dadinho.style.backgroundImage="url('./assets/img/face3.jpg')";
         break;
 
-        case 4: dadinho.style.backgroundImage="url('./assets/img/face4.jpg')"; andarpeao(4);
+        case 4: dadinho.style.backgroundImage="url('./assets/img/face4.jpg')";
         break;
 
-        case 5: dadinho.style.backgroundImage="url('./assets/img/face5.jpg')"; andarpeao(5);
+        case 5: dadinho.style.backgroundImage="url('./assets/img/face5.jpg')";
         break;
         
-        case 6: dadinho.style.backgroundImage="url('./assets/img/face6.jpg')";
+        case 6: dadinho.style.backgroundImage="url('./assets/img/face6.jpg')"
         contagem++;
         if(contagem>3) {contagem=0; return alert('passar a vez para o próximo jogador')};
         document.addEventListener('click', function(e){
@@ -56,12 +59,14 @@ function rolardado(){
                 el.classList.add('semdisplay');
                 sairpeca(el);  } 
             });
-        andarpeao(6);
         break;
-    };setTimeout(()=>document.querySelector('.dado').style.backgroundImage="url('./assets/img/dadao.jpg')", 3500);
+    };
+        setTimeout(()=>document.querySelector('.dado').style.backgroundImage="url('./assets/img/dadao.jpg')", 3500);
     }, 1600);
     
     setTimeout(()=>dadinho.classList.remove('dado1'), 2000);
+
+    andarpeao(dado);
 }
 
 // movimentar as peças
@@ -86,7 +91,7 @@ function andarpeao(cor, numero){
                         break; 
                 
                 }
-                jogazul.play();
+                
 
         })
         
